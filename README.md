@@ -1,4 +1,4 @@
-# POGODYNKA
+# LEOCODE
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
@@ -31,12 +31,18 @@
 ##### 1 
 - initial
 
+### 1.0.1
+fixed 
+002
+006
+
+
 ### To do
 001 add Styled Components werever applicable
-002 Actual data for head
+-002 Actual data for head
 003 auto-focus on input
 005 check lazy
-006 leocode logo
+-006 leocode logo
 007 pwa
 008 in userlistitem there is a function to be relocated to functions
 009 renderable by hoc's

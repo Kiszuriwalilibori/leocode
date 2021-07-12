@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, {css, keyframes}from 'styled-components'
+import styled, {css, keyframes}from 'styled-components';
 
 const animation = keyframes` 
   0% {font-size: 12px;}

@@ -7,7 +7,6 @@ import Pagination from './components/Pagination';
 import Loader from './components/Loader';
 import './App.css';
 
-// const Loader = React.memo(()=><div className='loader'>Loading...</div>);
 const UsersList = lazy(()=>import("./components/UsersList"));
 const ErrorMessageBox = lazy(()=>import("./components/ErrorMessageBox"));
 
