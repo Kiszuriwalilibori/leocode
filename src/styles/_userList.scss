@@ -1,0 +1,8 @@
+
+.usersList {
+    list-style: none;
+    margin-top: -15px;
+    @media only screen and (max-width: 500px) {
+      margin-top: -5px;
+    }
+  }
