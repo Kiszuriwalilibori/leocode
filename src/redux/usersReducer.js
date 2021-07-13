@@ -1,5 +1,8 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 import {paginationUtils} from "../js/functions";
+import {URL} from "../js/fixtures";
+
+
 export const showError = createAction("ERROR_SHOW");
 export const clearError = createAction("ERROR_CLEAR");
 export const fetchUsersFailed = createAction("FETCH_USERS_FAIL");
@@ -76,7 +79,7 @@ export default usersReducer;
 export function fetchUsers() {
   return dispatch => {
     dispatch(fetchUsersRequested());
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(URL)
       .then(response => response.json())
       .then(data => {
         dispatch(fetchUsersSuccess(data));

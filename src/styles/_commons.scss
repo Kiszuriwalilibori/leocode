@@ -28,26 +28,26 @@ body {
   overflow: auto;
 }
 
-.main {
-  margin: 0 auto;
-  max-width: 600px;
-  padding: 100px 10px 10px 10px;
+// .main {
+//   margin: 0 auto;
+//   max-width: 600px;
+//   padding: 100px 10px 10px 10px;
 
-  &__form {
-    margin: 50px 0;
+//   &__form {
+//     margin: 50px 0;
 
-    @media only screen and (max-width: 667px) {
-      margin-top: calc(10px + 40 * ((100vw - 320px) / 347));
-      margin-bottom: calc(10px + 40 * ((100vw - 320px) / 347));
-    }
-  }
+//     @media only screen and (max-width: 667px) {
+//       margin-top: calc(10px + 40 * ((100vw - 320px) / 347));
+//       margin-bottom: calc(10px + 40 * ((100vw - 320px) / 347));
+//     }
+//   }
 
-  @media only screen and (max-width: 667px) {
-    max-width: 90%;
-    padding-top: calc(10px + 90 * ((100vw - 500px) / 167));
-  }
+//   @media only screen and (max-width: 667px) {
+//     max-width: 90%;
+//     padding-top: calc(10px + 90 * ((100vw - 500px) / 167));
+//   }
 
-}
+// }
 
 // .header {
 //   text-align: center;

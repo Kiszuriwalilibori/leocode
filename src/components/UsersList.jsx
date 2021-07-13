@@ -3,19 +3,28 @@ import {connect} from "react-redux";
 import UsersListItem from "./UsersListItem";
 import FadeIn from 'react-fade-in';
 import {paginationUtils} from '../js/functions';
+import styled from 'styled-components';
 
-let List = (props) => {
+const List = styled.ul`
+list-style: none;
+    margin-top: -15px;
+    @media only screen and (max-width: 500px) {
+      margin-top: -5px;
+    }
+`
+
+let UsersList = (props) => {
 
   const { users, currentPageNumber, numberOfPages } = props;
   const currentlyVisibleUsers = paginationUtils.sliceSinglePageContent(currentPageNumber, users, numberOfPages);
   const userList = currentlyVisibleUsers? currentlyVisibleUsers.map((user, index) => <UsersListItem key ={index} index={index} user={user} />):null;
   
   return <section>
-            <ul className ="usersList">
+            <List>
               <FadeIn>
                 {userList}
               </FadeIn>
-            </ul>
+            </List>
           </section>;
 };
 
@@ -25,5 +34,5 @@ const mapStateToProps = state => ({
   numberOfPages:state.users.numberOfPages,
 });
 
-const UsersList = connect(mapStateToProps, null)(List);
+UsersList = connect(mapStateToProps, null)(UsersList);
 export default UsersList;

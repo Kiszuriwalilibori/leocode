@@ -5,7 +5,6 @@ class PaginationUtils {
     this.pageLength = pageLength;
   }
   getNumberOfPages(array) {
-    
     return Math.ceil(array.length / this.pageLength);
   }
 
@@ -20,3 +19,8 @@ class PaginationUtils {
 
 export const paginationUtils = new PaginationUtils(itemsPerPage);
 
+export const formatUserData = {
+  id: num => `${num.toString()}.`,
+  nam: str => str,
+  userName: str => `@${str}`,
+};

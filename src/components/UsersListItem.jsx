@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from 'styled-components';
+import {formatUserData} from '../js/functions';
 
 const UserDetailFaded =styled.span`
 padding: 1rem 5px;
@@ -34,11 +35,11 @@ line-height: 2;
     }
   }
 `
-const formatUserData = {
-  id: num => `${num.toString()}.`,
-  nam: str => str,
-  userName: str => `@${str}`,
-};
+// const formatUserData = {
+//   id: num => `${num.toString()}.`,
+//   nam: str => str,
+//   userName: str => `@${str}`,
+// };
 
 
 let UsersListItem = props => {
