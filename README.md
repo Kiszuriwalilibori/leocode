@@ -42,15 +42,19 @@ fixed
 003
 010
 008
+011
 
+### 1.0.3
+005
 
 ### To do
 -001 add Styled Components wherever applicable
 -002 Actual data for head
 -003 auto-focus on input
-005 check lazy
+-005 check lazy
 -006 leocode logo
 007 pwa
 -008 in userlistitem there is a function to be relocated to functions
 009 renderable by hoc's
 -010 input availability before loaded data may lead to unwelcome behaviour
+-011 debounced filtering

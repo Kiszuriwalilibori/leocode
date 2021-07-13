@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {formatUserData} from '../js/functions';
 
 const UserDetailFaded =styled.span`
@@ -35,12 +36,6 @@ line-height: 2;
     }
   }
 `
-// const formatUserData = {
-//   id: num => `${num.toString()}.`,
-//   nam: str => str,
-//   userName: str => `@${str}`,
-// };
-
 
 let UsersListItem = props => {
   const { user, index } = props;
@@ -55,3 +50,8 @@ let UsersListItem = props => {
 };
 
 export default UsersListItem;
+
+UsersListItem.propTypes ={
+  user: PropTypes.object,
+  index: PropTypes.number
+}

@@ -10,7 +10,6 @@ class PaginationUtils {
 
   sliceSinglePageContent(index, array, threshold) {
     if (index > threshold) index = threshold;
-
     const first = this.pageLength * (index - 1);
     const last = first + this.pageLength > array.length ? array.length : first + this.pageLength;
     return array.slice(first, last);

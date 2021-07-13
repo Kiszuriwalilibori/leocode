@@ -1,7 +1,6 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import {paginationUtils} from "../js/functions";
-import {URL} from "../js/fixtures";
-
+import { paginationUtils } from "../js/functions";
+import { URL } from "../js/fixtures";
 
 export const showError = createAction("ERROR_SHOW");
 export const clearError = createAction("ERROR_CLEAR");
@@ -18,18 +17,16 @@ const initialState = {
   allUsers: [],
   matchingUsers: [],
   currentPageNumber: 1,
-  numberOfPages:0,
+  numberOfPages: 0,
 };
 
 const usersReducer = createReducer(initialState, builder => {
   builder
-    .addCase(changePage,(state, action)=>{
+    .addCase(changePage, (state, action) => {
       if (action.payload) {
         state.currentPageNumber = action.payload;
       }
-    }
-
-    )
+    })
     .addCase(matchingUsersFound, (state, action) => {
       if (action.payload) {
         state.matchingUsers = action.payload;
@@ -42,6 +39,7 @@ const usersReducer = createReducer(initialState, builder => {
     })
 
     .addCase(fetchUsersFailed, (state, action) => {
+      state.doesFetchWork = false;
       if (action.payload) {
         state.error.value = true;
         state.error.code = action.payload;
@@ -53,7 +51,8 @@ const usersReducer = createReducer(initialState, builder => {
         state.doesFetchWork = false;
         state.allUsers = action.payload;
         state.matchingUsers = action.payload;
-        state.numberOfPages = paginationUtils.getNumberOfPages(action.payload);        
+        state.numberOfPages = paginationUtils.getNumberOfPages(action.payload);
+        state.doesFetchWork = false;
       }
     })
 

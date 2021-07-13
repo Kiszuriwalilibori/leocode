@@ -3,9 +3,7 @@ import { fetchUsers, searchUsers } from "./redux/usersReducer";
 import debounce from "lodash/debounce";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import Input from "./components/Input";
 import Header from "./components/Header";
-import Pagination from "./components/Pagination";
 import Loader from "./components/Loader";
 
 const Main = styled.main`
@@ -20,12 +18,13 @@ padding: 100px 10px 10px 10px;
 `;
 const UsersList = lazy(() => import("./components/UsersList"));
 const ErrorMessageBox = lazy(() => import("./components/ErrorMessageBox"));
+const Input = lazy(() => import("./components/Input"));
+const Pagination = lazy(() => import("./components/Pagination"));
 
 const initialPattern = "";
 
 let App = props => {
   const { fetchUsers, searchUsers } = props;
-
   const [pattern, setPattern] = useState(initialPattern);
 
   const updatePattern = useCallback(e => {
@@ -33,7 +32,6 @@ let App = props => {
   }, []);
 
   const clearInput = useCallback(e => {
-    e.preventDefault();
     setPattern(initialPattern);
   }, []);
 
@@ -41,14 +39,14 @@ let App = props => {
     fetchUsers();
   }, [fetchUsers]);
 
-  const debouncedSearchUsers = React.useCallback(
+  const debouncedSearchUsers = useCallback(
     debounce(x => searchUsers(x), 500),
     []
   );
 
   useEffect(() => {
     debouncedSearchUsers(pattern);
-  }, [pattern, searchUsers]);
+  }, [pattern, debouncedSearchUsers]);
 
   return (
     <Main>
