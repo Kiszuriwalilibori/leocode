@@ -46,6 +46,7 @@ fixed
 
 ### 1.0.3
 005
+009
 
 ### To do
 -001 add Styled Components wherever applicable
@@ -55,6 +56,6 @@ fixed
 -006 leocode logo
 007 pwa
 -008 in userlistitem there is a function to be relocated to functions
-009 renderable by hoc's
+009 users list has a fallback component
 -010 input availability before loaded data may lead to unwelcome behaviour
 -011 debounced filtering

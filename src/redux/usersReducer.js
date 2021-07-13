@@ -40,6 +40,7 @@ const usersReducer = createReducer(initialState, builder => {
 
     .addCase(fetchUsersFailed, (state, action) => {
       state.doesFetchWork = false;
+     
       if (action.payload) {
         state.error.value = true;
         state.error.code = action.payload;
@@ -47,12 +48,11 @@ const usersReducer = createReducer(initialState, builder => {
     })
 
     .addCase(fetchUsersSuccess, (state, action) => {
+      state.doesFetchWork = false;
       if (action.payload) {
-        state.doesFetchWork = false;
         state.allUsers = action.payload;
         state.matchingUsers = action.payload;
-        state.numberOfPages = paginationUtils.getNumberOfPages(action.payload);
-        state.doesFetchWork = false;
+        state.numberOfPages = paginationUtils.getNumberOfPages(action.payload);        
       }
     })
 

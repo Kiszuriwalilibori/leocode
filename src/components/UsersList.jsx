@@ -26,16 +26,16 @@ let UsersList = props => {
         <FadeIn>{userList}</FadeIn>
       </List>
     </section>
-  ) : (
+  ) : 
     <Loader />
-  );
+  ;
 };
 
 const mapStateToProps = state => ({
   users: state.users.matchingUsers,
   currentPageNumber: state.users.currentPageNumber,
   numberOfPages: state.users.numberOfPages,
-  doesFetchWork: state.doesFetchWork,
+  doesFetchWork: state.users.doesFetchWork,
 });
 
 UsersList = connect(mapStateToProps, null)(UsersList);
